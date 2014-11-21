@@ -8,8 +8,8 @@ In Ruby there are two popular style guides:
 bbatsov](https://github.com/bbatsov/ruby-style-guide).
 
 Personally, I'm all for the second option. The community-driven guide is
-*extensive* and has all the good practices that any rubyist should follow. I
+*extensive* and has all the good practices that all rubyist should follow. I
 only have one objection: Perl-style global variables are accepted. I like Perl,
 and even though I agree that Perl-style global variables are not very
-descriptive, I'm used to them.
+descriptive, I'm too used to them.
 
