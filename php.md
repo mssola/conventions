@@ -18,16 +18,16 @@ were right, period. This applies to PHP in the following way:
 Besides this, the MediaWiki team is on point on every other detail, so follow
 their conventions. Moreover, I'm also adding the following points:
 
-1. Be as verbose as possible when specifying language features. This includes
+- Be as verbose as possible when specifying language features. This includes
 things like adding keywords such as `final`, access modifiers, type hints, etc.
-2. Always use the short array syntax:
+- Always use the short array syntax:
 
 ```php
 $a = [1, 2];      // yes.
 $a = array(1, 2); // no.
 ```
 
-3. Prefer the lowercase version of built-in values. For example:
+- Prefer the lowercase version of built-in values. For example:
 
 ```php
 $a = null; // not NULL.
