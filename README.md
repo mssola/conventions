@@ -9,8 +9,8 @@ these conventions, reference them, etc.
 
 Of course, these are my *personal* coding conventions, that I use in my personal
 projects. You might disagree with them and that's completely fine. When working
-on an already existing codebase, I follow the *golden rule* describe in
-[LLVM's](http://llvm.org/docs/CodingStandards.html) coding conventions:
+on an already existing codebase, I follow the *golden rule* described in the
+[LLVM](http://llvm.org/docs/CodingStandards.html) coding conventions:
 
     If you are extending, enhancing, or bug fixing already implemented code, use
     the style that is already being used so that the source is uniform and easy
