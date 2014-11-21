@@ -6,9 +6,10 @@ I'm basically following the MediaWiki conventions. You can find them here:
 1. [General Code Conventions](http://www.mediawiki.org/wiki/Manual:Coding_conventions)
 2. [Code Conventions for PHP](http://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP)
 
-The first one specifies the coding conventions in general, the second one the
-specifics of PHP. I find them all pretty agreeable except for the rules on
-braces. In regards to braces, [K&R](https://en.wikipedia.org/wiki/Indent_style#K.26R_style)
+The first one specifies the coding conventions in general. From the first link
+make sure to follow the section `Code structure`. The second one is more
+PHP-specific. I find it all pretty agreeable except for the rules on braces.
+In regards to braces, [K&R](https://en.wikipedia.org/wiki/Indent_style#K.26R_style)
 were right, period. This applies to PHP in the following way:
 
     Always place the opening brace in the same line except for class,
