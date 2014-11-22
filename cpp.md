@@ -192,8 +192,8 @@ members should be left unprefixed.
 ### Functions
 
 Use `lowerCamelCase` always. It might be confusing if the file contains a lot
-of STL functions (e.g. `push_back`), but I think that is better to stick with
-one single naming convention for functions always.
+of standard functions (e.g. `push_back`), but I think that is better to stick
+with one single naming convention for functions always.
 
 ### Namespaces and Classes
 
@@ -222,15 +222,56 @@ To do.
 
 ## Scoping
 
+### Namespaces
+
+To do
+
+### Static and Global Variables
+
+To do
+
+### Nesting
+
 To do.
 
 ## Classes
 
 To do.
 
-## Other C++ Features
+## Other Features
 
-To do.
+### Casting
+
+- Avoid C-style casting, favoring `static_cast`. It is safer.
+- Try to avoid the `Run-Time Type Information` with things like `dynamic_cast`.
+Doing this is prone to abuse and it has performance issues.
+
+### Exceptions
+
+They are forbidden. In this case I agree completely with the Go programming
+language: exceptions should be for exceptional cases (no pun intended), and in
+these cases what you want to do is to exit the program (`panic` in Go's
+terminology). Otherwise, we are just dealing with errors, and in a safe
+environment functions should always check for errors, so there is no point of
+using exceptions in my humble opinion.
+
+This prohibition also applies to exception-related features added in C++11,
+such as `std::exception_ptr` and friends. Note, however, that you might use
+the new keyword `noexcept` if you are sure that the compiler will perform
+optimizations on top of it (which is questionable).
+
+### Enums
+
+Prefer `enum class` whenever possible. Old-style `enum` are not forbidden, but
+their usage is discouraged. The rationale is that `enum class` are strongly
+typed compared to old `enum`, so they are safer for the purpose of
+enumerating things.
+
+### Other C++11 and C++1y Features
+
+- Use `nullptr` for pointer always. It is safer.
+- Use `auto` when writing the whole type adds clutter (e.g. iterators). Never
+use `auto` for anything but local variables.
 
 ## Language & Encoding
 
