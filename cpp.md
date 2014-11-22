@@ -7,7 +7,7 @@ required for some syntactic reason. Of course, lines should never have any
 trailing whitespace.
 
 A new indentation level is added after an opening brace that is followed by a
-new line, but there are some special exceptions to that:
+new line character, but there are some special exceptions to that:
 
 - `case` statements inside of a `switch` statement may not be further indented.
 As an example:
@@ -45,7 +45,7 @@ if (condition) statement;
 if (condition)
   statement;
 
-// No! Else statements have to be is the same line as the closing brace.
+// No! Else statements have to be in the same line as the closing brace.
 if (condition) {
   statement;
 }
@@ -93,7 +93,7 @@ single space before `*` or `&`, but not after. All binary operators should have
 one space on each side, except for `.`, `->`, `.*` and `->*`. Unary operators
 have one single space before them, but zero spaces after. Postfix increment &
 decrement operators don't have any space before them and, conversely, prefix
-increment & decrement operator don't have any space after them. The rationale
+increment & decrement operators don't have any space after them. The rationale
 for all this is K&R.
 
 If one expression does not fit on one line, attempt to wrap it after an
