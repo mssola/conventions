@@ -164,7 +164,57 @@ MyClass::MyClass(int idx, int another, int yetAnother)
 
 ## Naming
 
-To do
+### Variables
+
+Use `lowerCamelCase` for all local variables. Static variables should
+additionally be prefixed by `s_`. Likewise, global variables should be prefixed
+by `g_`.
+
+Try to use descriptive and short names. For local variables inside a short
+function, it might be just fine to use a variable named `it` for a `for` loop
+iterator. However, if this function is a bit large and contains multiple loops,
+maybe it is not such a great idea to name it `it` (unless you somehow re-use
+this variable). Even though I believe that common sense is the least common of
+all senses, try to use it when naming variables.
+
+### Constants
+
+All constants should be prefixed with `k` and use `CamelCase`. For example:
+`kInvalidHandle`. Moreover, prefer `constexpr` to `const` whenever possible.
+
+### Struct & Class data members
+
+As with variables, use `lowerCamelCase` for all data members. Additionally,
+private instance members should be prefixed with `m_` (e.g., `m_cls`), and all
+static members should be prefixed with `s_` (e.g., `s_instance`). Public
+members should be left unprefixed.
+
+### Functions
+
+Use `lowerCamelCase` always. It might be confusing if the file contains a lot
+of STL functions (e.g. `push_back`), but I think that is better to stick with
+one single naming convention for functions always.
+
+### Namespaces and Classes
+
+Use `lowercase` for namespaces and `CamelCase` for classes. The rationale
+for this is that if we picked the same naming convention, then things like
+`Something::foo` might be confusing, since we would not know if `Something` was
+a namespace or a class. Moreover, namespaces follow the `lowercase` convention
+because I believe that namespaces should be named with a simple word, rather
+than a compound word. Since we generally go for `lowerCamelCase`, for simple
+words this just results into `lowercase`.
+
+### Enumerator Names
+
+Enumerator names and their list of values should follow the `CamelCase` naming
+convention.
+
+### Macros
+
+Use `UPPER_CASE_WITH_UNDERSCORE`. The rationale behind this is that macros
+should be easily noticeable and scare people, so they deserve an frightning
+naming convention.
 
 ## Headers
 
