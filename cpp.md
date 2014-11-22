@@ -207,14 +207,14 @@ words this just results into `lowercase`.
 
 ### Enumerator Names
 
-Enumerator names and their list of values should follow the `CamelCase` naming
+Enumerators and their list of values should follow the `CamelCase` naming
 convention.
 
 ### Macros
 
 Use `UPPER_CASE_WITH_UNDERSCORE`. The rationale behind this is that macros
-should be easily noticeable and scare people, so they deserve an frightning
-naming convention.
+should be easily noticeable and scary, so they deserve a frightning naming
+convention.
 
 ## Headers
 
