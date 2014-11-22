@@ -173,10 +173,12 @@ To do.
 
 To do.
 
-## Encoding
+## Language & Encoding
 
-Non-ASCII characters are highly discouraged and they are only allowed in
-comments. Use the UTF-8 encoding *always*.
+- Use English always.
+- Non-ASCII characters are highly discouraged and they are only allowed in
+comments.
+- Use the UTF-8 encoding *always*.
 
 ## Comments
 
