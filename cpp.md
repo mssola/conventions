@@ -94,7 +94,16 @@ one space on each side, except for `.`, `->`, `.*` and `->*`. Unary operators
 have one single space before them, but zero spaces after. Postfix increment &
 decrement operators don't have any space before them and, conversely, prefix
 increment & decrement operators don't have any space after them. The rationale
-for all this is K&R.
+for all this is K&R. Some examples:
+
+```cpp
+// Neither of both are ok.
+MyClass* obj;
+MyClass * obj;
+
+// Ok.
+MyClass *obj;
+```
 
 If one expression does not fit on one line, attempt to wrap it after an
 operator and indent subsequent lines with the beggining of the current
