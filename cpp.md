@@ -287,6 +287,13 @@ things.
 - Use `nullptr` for pointers always. It is safer.
 - Use `auto` when writing the whole type adds clutter (e.g. iterators). Never
 use `auto` for anything but local variables.
+- Prefer C++11 foreach syntax to explicit iterators:
+
+```cpp
+for (const auto &it : myVec) {
+    ...
+}
+```
 
 ## Language & Encoding
 
