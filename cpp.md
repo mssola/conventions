@@ -460,7 +460,22 @@ comments.
 
 ## Comments
 
-To do
+All public and private APIs in headers should be documented in detail. Names
+and notions that are not obvious should be explained too.
+
+Only use C-style comments (`/* */`) for documentation. Otherwise, the `//`
+syntax is preferred, even in multiline comments, since it makes it easier to
+comment out blocks of code. Comments may not be inlined, for readability. So:
+
+```cpp
+std::vector<int> vec; // No!
+
+// Yes.
+std::vector<int> vec;
+```
+
+Last but not least, every file should contain license boilerplate. Choose
+the appropriate boilerplate for the license used by the project.
 
 ## Influencers for this coding convention
 
