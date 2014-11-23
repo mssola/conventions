@@ -328,19 +328,71 @@ it on an anonymous namespace in the `.cpp` file).
 
 ## Classes
 
-To do. Some topics:
+### Using struct vs class
 
-- struct vs class.
-- getters & setters.
-- explicit vs implicit.
-- inline.
-- const, noexcept.
-- smart pointers vs raw pointers.
-- friends.
-- Multiple inheritance
-- operator overloading.
-- Interfaces.
-- declaration order.
+In C++ `struct` and `class` have nearly identical meanings; the only difference
+lies in the default accessibility (`struct` defaults to public, and `class`, to
+private).
+
+I do not have any strong arguments in regards when to use `struct` and when
+`class`. As a suggestion:
+
+- Use `struct` for "passive" objects. That is, for objects that just carry data
+but lack any functionality other than accessing/setting the data members.
+- If more functionality is needed, then use a `class`.
+- When in doubt, use `class`.
+
+### Implicit and explicit constructors
+
+By default, always use `explicit` for constructors callable with one argument.
+This also applies to constructors where every parameter after the first has a
+default value. The rationale behind this is that with this we avoid nasty
+implicit conversions. Using `explicit` for constructors with no arguments or
+with constructors with more than one argument with no default value, is
+pointless.
+
+### Getters & setters
+
+Prefer declaring public member variables to using getters and setters. Getters
+and setters that do not manage object state in a nontrivial way serve to bloat
+the API and introduce unnecessary boilerplate.
+
+Getters are, of course, encouraged for private members. Avoid prefixing getters
+with `get`.
+
+### Inlining
+
+Defining functions with the `inline` keyword is encouraged if said function is
+very short (e.g. 1-3 lines of code). Moreover, writing `inline` is always
+required, even if functions implemented in `.h` files are [always inlined by
+the compiler](http://stackoverflow.com/a/3343046).
+
+### Friends
+
+Using the `friend` construct is allowed, within reason. Using this construct
+might be useful in some particular cases, but generally speaking, its usage is
+discouraged.
+
+### Overloading
+
+In my opinion, overloading operators is a rather dangerous thing to do. So, the
+general rule for this is to not do it at all. There might be some special
+exceptions to this (e.g. a logging class that emulates the `std::cout` API by
+overloading the `<<` operator).
+
+### Declaration order
+
+Adhere to the following order for declarations in a `struct` or a `class`
+declaration:
+
+1. Friend classes.
+2. Nested enums, typedefs and aliases (through the `using` keyword).
+3. Public, protected and private methods, in this specific order.
+4. Constants and static data members.
+5. Public, protected and private instance data members, in this specific order.
+
+The list of methods and members might be grouped, for readability. Each
+subgroup should be separated from each other with a blank line.
 
 ## Other Features
 
@@ -383,6 +435,7 @@ other sections of this document:
 - Use `nullptr` for pointers always. It is safer.
 - Use `auto` when writing the whole type adds clutter (e.g. iterators). Never
 use `auto` for anything but local variables.
+- Always use `override` when overriding a method in a subclass. It is safer.
 - Prefer C++11 foreach syntax to explicit iterators:
 
 ```cpp
