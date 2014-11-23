@@ -48,7 +48,7 @@ public:
 ```
 
 **Braces** are *always* required. There is no exception to this. Moreover, all
-braces have to be followed by a new line character. The only exception to this
+braces have to be followed by a new line character. The only exceptions to this
 are `else` statements, `do-while` statements and exceptions (but exceptions
 are forbidden anyways). Therefore:
 
@@ -238,10 +238,10 @@ and which declares its public interfaces. All the declarations inside the `.h`
 file have to be properly documented. Also try not to make large header files
 that just serve to include groups of large header files. In general, it is
 always preferrable that each class has its own `.h` file, but I do not have any
-strong feeling about this either, it is just a suggestion.
+strong feelings about this either, it is just a suggestion.
 
 All headers should have define guards. Define guards should have a proper name
-but more importantly, they all should have the same name convention. As a
+but more importantly, they all should have the same naming convention. As a
 suggestion, I usually do:
 
 ```cpp
