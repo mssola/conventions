@@ -32,6 +32,21 @@ int a = 0;
 }
 ```
 
+- `Access specifiers` (public, protected and private) are indented in the same
+level as the line containing the `class` or the `struct` keyword. So, for
+example:
+
+```cpp
+class MyClass
+{
+    // No!
+    public:
+
+// Yes
+public:
+}
+```
+
 **Braces** are *always* required. There is no exception to this. Moreover, all
 braces have to be followed by a new line character. The only exception to this
 are `else` statements, `do-while` statements and exceptions (but exceptions
