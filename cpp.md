@@ -233,7 +233,57 @@ convention.
 
 ## Headers
 
-To do.
+Every `.cpp` file should have a corresponding `.h` file, with the same name,
+and which declares its public interfaces. All the declarations inside the `.h`
+file have to be properly documented. Also try not to make large header files
+that just serve to include groups of large header files. In general, it is
+always preferrable that each class has its own `.h` file, but I do not have any
+strong feeling about this either, it is just a suggestion.
+
+All headers should have define guards. Define guards should have a proper name
+but more importantly, they all should have the same name convention. As a
+suggestion, I usually do:
+
+```cpp
+#ifndef <NAMESPACE>_<CLASS_NAME>_H_
+#define <NAMESPACE>_<CLASS_NAME>_H_
+
+// Code
+
+#endif /* <NAMESPACE>_<CLASS_NAME>_H_ */
+```
+
+Header files should be *self-contained*. That is, header files should not rely
+on the list of headers included by included headers. To help with this, you can
+follow these guidelines:
+
+- Always include the corresponding `.h` for a `.cpp` first.
+- Separate includes into groups: C++ standard library headers, external
+projects (such as `Boost` and `Qt`), and finally headers within your project.
+Each group should be separated by a newline.
+- Keep headers alphabetized within each group.
+- Use angle brackets always.
+- Relative paths are forbidden.
+- Use class/struct forwarding whenever possible, to avoid unneeded includes.
+- Some libraries such as `Qt` offer multiple ways of including library headers.
+In these cases, always be as explicit as possible in regards to the path (e.g.
+`<QtCore/QString>` instead of just `<QString>`).
+
+As an example, an hypothetical `MyClass` might have the following include
+section in its `.cpp` file:
+
+```cpp
+#include <myclass.h>
+
+#include <string>
+#include <vector>
+
+#include <QtCore/QString>
+
+#include <aclass.h>
+#include <anotherclass.h>
+#include <yetanotherclass.h>
+```
 
 ## Scoping
 
@@ -278,7 +328,19 @@ it on an anonymous namespace in the `.cpp` file).
 
 ## Classes
 
-To do.
+To do. Some topics:
+
+- struct vs class.
+- getters & setters.
+- explicit vs implicit.
+- inline.
+- const, noexcept.
+- smart pointers vs raw pointers.
+- friends.
+- Multiple inheritance
+- operator overloading.
+- Interfaces.
+- declaration order.
 
 ## Other Features
 
@@ -308,6 +370,10 @@ Prefer `enum class` whenever possible. Old-style `enum` is not forbidden, but
 its usage is discouraged. The rationale is that `enum class` is strongly
 typed and `enum` is not, so they are safer for the purpose of enumerating
 things.
+
+### rvalue references
+
+To do.
 
 ### C++11 and C++1y Features
 
