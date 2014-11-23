@@ -277,14 +277,14 @@ optimizations on top of it (which is questionable).
 
 ### Enums
 
-Prefer `enum class` whenever possible. Old-style `enum` are not forbidden, but
-their usage is discouraged. The rationale is that `enum class` are strongly
-typed compared to old `enum`, so they are safer for the purpose of
-enumerating things.
+Prefer `enum class` whenever possible. Old-style `enum` is not forbidden, but
+its usage is discouraged. The rationale is that `enum class` is strongly
+typed and `enum` is not, so they are safer for the purpose of enumerating
+things.
 
 ### Other C++11 and C++1y Features
 
-- Use `nullptr` for pointer always. It is safer.
+- Use `nullptr` for pointers always. It is safer.
 - Use `auto` when writing the whole type adds clutter (e.g. iterators). Never
 use `auto` for anything but local variables.
 
