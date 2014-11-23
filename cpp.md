@@ -227,7 +227,7 @@ convention.
 
 ### Macros
 
-Use `UPPER_CASE_WITH_UNDERSCORE`. The rationale behind this is that macros
+Use `UPPER_CASE_WITH_UNDERSCORES`. The rationale behind this is that macros
 should be easily noticeable and scary, so they deserve a frightning naming
 convention.
 
@@ -239,11 +239,12 @@ To do.
 
 ### Namespaces
 
-- All code has to be scoped by a common namespace.
-- It is ok to have nested named namespaces if they are really needed.
+- All the code has to be scoped by a common namespace. The name of this common
+namespace should be related to the project's name.
+- It is ok to have nested named namespaces if they improve the code hierarchy.
 - Anonymous namespaces are encouraged in `.cpp` files. The rationale behind
 this is that they avoid link time naming conflicts by keeping symbols internal
-to their transaltion unit. They are better than using the `static` keyword
+to their translation unit. They are better than using the `static` keyword
 because `static` does not work on struct and class declarations.
 - Inline namespaces are forbidden. Just don't do it, they are not worth it.
 - The `using` directive is forbidden in `.h` files. It is fine to use them in
@@ -251,7 +252,7 @@ because `static` does not work on struct and class declarations.
 the current namespace: for `.cpp` files it might be useful, but for `.h` files
 it is just pure evil.
 
-### Static and Global scopes.
+### Static and Global scopes
 
 Static and global variables are highly discouraged. When declaring a static or
 a global variable you have to write a comment with a convincing argument in it.
