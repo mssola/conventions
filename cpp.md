@@ -239,15 +239,41 @@ To do.
 
 ### Namespaces
 
-To do
+- All code has to be scoped by a common namespace.
+- It is ok to have nested named namespaces if they are really needed.
+- Anonymous namespaces are encouraged in `.cpp` files. The rationale behind
+this is that they avoid link time naming conflicts by keeping symbols internal
+to their transaltion unit. They are better than using the `static` keyword
+because `static` does not work on struct and class declarations.
+- Inline namespaces are forbidden. Just don't do it, they are not worth it.
+- The `using` directive is forbidden in `.h` files. It is fine to use them in
+`.cpp` files but try to use them carefully. The rationale is that they pollute
+the current namespace: for `.cpp` files it might be useful, but for `.h` files
+it is just pure evil.
 
-### Static and Global Variables
+### Static and Global scopes.
 
-To do
+Static and global variables are highly discouraged. When declaring a static or
+a global variable you have to write a comment with a convincing argument in it.
+The rationale is that static and global variables are one of those things that
+can bite you in the ass in unexpected ways. Moreover, it is always hard to find
+and fix bugs that are related to static and global variables.
+
+Things are a bit different here in regards to functions. You may use global
+nonmember functions *if* they are contained in an anonymous namespace.
+Otherwise, you should use completely global functions rarely.
 
 ### Nesting
 
-To do.
+In C++ you can nest a lot of things. In particular:
+
+- Namespaces: as previously explained, it is fine to nest multiple namespaces
+if you think that it improves the code hierarchy.
+- Classes: please don't. Nesting classes is not banned, but it is highly
+discouraged. The rationale behind this is that there is often better ways to
+solve what nested classes do (e.g. forward a class declaration and then declare
+it on an anonymous namespace in the `.cpp` file).
+- Functions: nested functions are prohibited. Use `lambdas` instead.
 
 ## Classes
 
@@ -282,7 +308,10 @@ its usage is discouraged. The rationale is that `enum class` is strongly
 typed and `enum` is not, so they are safer for the purpose of enumerating
 things.
 
-### Other C++11 and C++1y Features
+### C++11 and C++1y Features
+
+Let's talk about some C++11 and C++1y features that have not been dealt in
+other sections of this document:
 
 - Use `nullptr` for pointers always. It is safer.
 - Use `auto` when writing the whole type adds clutter (e.g. iterators). Never
@@ -294,6 +323,13 @@ for (const auto &it : myVec) {
     ...
 }
 ```
+
+### Other
+
+There are some controversial language constructs such as `goto` or the
+`operator,()`. My take on this is that they are accepted but highly
+discouraged. That is, you can use them, but you better have a convincing
+argument when using them rather than using another C++ construct.
 
 ## Language & Encoding
 
