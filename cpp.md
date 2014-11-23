@@ -425,7 +425,12 @@ things.
 
 ### rvalue references
 
-To do.
+Use rvalue references only to define move constructors and move assignment
+operators. If you do not want to support copy/move operations on your type,
+you might want to explicitly disable them using `= delete`.
+
+Note however that this is a pretty new feature, so I might be flat out wrong
+about this. So, take this section with a grain of salt.
 
 ### C++11 and C++1y Features
 
