@@ -339,7 +339,7 @@ I do not have any strong arguments in regards when to use `struct` and when
 
 - Use `struct` for "passive" objects. That is, for objects that just carry data
 but lack any functionality other than accessing/setting the data members.
-- If more functionality is needed, then use a `class`.
+- If more functionality is needed, then use `class`.
 - When in doubt, use `class`.
 
 ### Implicit and explicit constructors
@@ -348,7 +348,7 @@ By default, always use `explicit` for constructors callable with one argument.
 This also applies to constructors where every parameter after the first has a
 default value. The rationale behind this is that with this we avoid nasty
 implicit conversions. Using `explicit` for constructors with no arguments or
-with constructors with more than one argument with no default value, is
+for constructors with more than one argument with no default value, is
 pointless.
 
 ### Getters & setters
@@ -383,7 +383,7 @@ overloading the `<<` operator).
 ### Declaration order
 
 Adhere to the following order for declarations in a `struct` or a `class`
-declaration:
+definition:
 
 1. Friend classes.
 2. Nested enums, typedefs and aliases (through the `using` keyword).
@@ -461,4 +461,18 @@ comments.
 ## Comments
 
 To do
+
+## Influencers for this coding convention
+
+This coding convention is largely based on the coding conventions used at
+[Google](http://google-styleguide.googlecode.com/svn/trunk/cppguide.html) and
+the
+[HHVM](https://github.com/facebook/hhvm/blob/master/hphp/doc/coding-conventions.md)
+project. In fact, I have even *copy-pasted* text in which I agreed completely.
+
+Other influencers:
+
+- [LLVM](http://llvm.org/docs/CodingStandards.html).
+- [KDE](https://techbase.kde.org/Policies/Kdelibs_Coding_Style).
+- [Linux](https://www.kernel.org/doc/Documentation/CodingStyle).
 
