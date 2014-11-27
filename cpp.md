@@ -245,12 +245,12 @@ but more importantly, they all should have the same naming convention. As a
 suggestion, I usually do:
 
 ```cpp
-#ifndef <NAMESPACE>_<CLASS_NAME>_H_
-#define <NAMESPACE>_<CLASS_NAME>_H_
+#ifndef <NAMESPACE>_<CLASS_NAME>_H
+#define <NAMESPACE>_<CLASS_NAME>_H
 
 // Code
 
-#endif /* <NAMESPACE>_<CLASS_NAME>_H_ */
+#endif // <NAMESPACE>_<CLASS_NAME>_H
 ```
 
 Header files should be *self-contained*. That is, header files should not rely
