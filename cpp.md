@@ -297,10 +297,10 @@ this is that they avoid link time naming conflicts by keeping symbols internal
 to their translation unit. They are better than using the `static` keyword
 because `static` does not work on struct and class declarations.
 - Inline namespaces are forbidden. Just don't do it, they are not worth it.
-- The `using` directive is forbidden in `.h` files. It is fine to use them in
-`.cpp` files but try to use them carefully. The rationale is that they pollute
-the current namespace: for `.cpp` files it might be useful, but for `.h` files
-it is just pure evil.
+- The `using namespace` directive is forbidden in `.h` files. It is fine to
+use them in `.cpp` files but try to use them carefully. The rationale is that
+they pollute the current namespace: for `.cpp` files it might be useful, but
+for `.h` files it is just pure evil.
 
 ### Static and Global scopes
 
@@ -441,6 +441,8 @@ other sections of this document:
 - Use `auto` when writing the whole type adds clutter (e.g. iterators). Never
 use `auto` for anything but local variables.
 - Always use `override` when overriding a method in a subclass. It is safer.
+- Prefer using `using` instead of `typedef`. `using` does the same as `typedef`
+but it also supports templates.
 - Prefer C++11 foreach syntax to explicit iterators:
 
 ```cpp
