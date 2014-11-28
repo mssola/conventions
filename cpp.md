@@ -498,3 +498,10 @@ Other influencers:
 - [KDE](https://techbase.kde.org/Policies/Kdelibs_Coding_Style).
 - [Linux](https://www.kernel.org/doc/Documentation/CodingStyle).
 
+## Compliance with other coding conventions
+
+This document complies with the
+[KDE](https://techbase.kde.org/Policies/Kdelibs_Coding_Style) coding
+conventions except with the `tabs vs spaces` topic: in KDE projects you have to
+use 4 spaces for indentations instead of using tabs.
+
