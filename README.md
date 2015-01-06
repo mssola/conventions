@@ -19,5 +19,5 @@ on an already existing codebase, I follow the *golden rule* described in the
 You can suggest changes and, if they are consistent with my conventions (or
 fix an inconstintency that I might have), I will accept them.
 
-Copyright &copy; 2014 Miquel Sabaté Solà.
+Copyright &copy; 2014-2015 Miquel Sabaté Solà.
 
