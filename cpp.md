@@ -37,8 +37,7 @@ level as the line containing the `class` or the `struct` keyword. So, for
 example:
 
 ```cpp
-class MyClass
-{
+class MyClass {
     // No!
     public:
 
@@ -76,7 +75,8 @@ if (condition) {
 }
 ```
 
-Moreover, we don't put braces in a new line except for functions and classes.
+Moreover, we do not put braces in a new line except for functions (rationale:
+K&R).
 So:
 
 ```cpp
@@ -99,9 +99,6 @@ void foo()
 {
 }
 ```
-
-The rationale for this is K&R. Classes are treated as functions in this case
-because that's how I do it (yes, I don't have any clever excuse for this).
 
 Use one **space** after each keyword. For pointers and references, use a
 single space before `*` or `&`, but not after. All binary operators should have
@@ -502,6 +499,10 @@ Other influencers:
 
 This document complies with the
 [KDE](https://techbase.kde.org/Policies/Kdelibs_Coding_Style) coding
-conventions except with the `tabs vs spaces` topic: in KDE projects you have to
-use 4 spaces for indentations instead of using tabs.
+conventions except for the following points:
+
+- `tabs vs spaces`: in KDE projects you have to use 4 spaces for indentations
+instead of using tabs.
+- In KDE projects, you have to put braces on a new line for classes, structs
+and namespaces too.
 
