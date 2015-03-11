@@ -75,9 +75,8 @@ if (condition) {
 }
 ```
 
-Moreover, we do not put braces in a new line except for functions (rationale:
-K&R).
-So:
+Moreover, we do not put braces on a new line except for function
+implementations (rationale: K&R). So:
 
 ```cpp
 // No
