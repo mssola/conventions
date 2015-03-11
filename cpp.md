@@ -505,3 +505,10 @@ instead of using tabs.
 - In KDE projects, you have to put braces on a new line for classes, structs
 and namespaces too.
 
+## Misc
+
+- You can find a `.kateconfig` that handles the configuration for `tabs &
+spaces` [here](https://github.com/mssola/dotfiles/tree/master/kte). Notice that
+I have a version for KDE projects too.
+- An `uncrustify` config file is on the works.
+
