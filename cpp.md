@@ -510,5 +510,9 @@ and namespaces too.
 - You can find a `.kateconfig` that handles the configuration for `tabs &
 spaces` [here](https://github.com/mssola/dotfiles/tree/master/kte). Notice that
 I have a version for KDE projects too.
+- Even though warnings & flags are not *that* related with code style &
+conventions, I think it is useful (at least for myself), to list the warnings &
+flags that I am using. I have done this in the
+[warnings.md](https://github.com/mssola/conventions/files/warnings.md) file.
 - An `uncrustify` config file is on the works.
 
