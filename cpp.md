@@ -513,6 +513,7 @@ I have a version for KDE projects too.
 - Even though warnings & flags are not *that* related with code style &
 conventions, I think it is useful (at least for myself), to list the warnings &
 flags that I am using. I have done this in the
-[warnings.md](https://github.com/mssola/conventions/files/warnings.md) file.
+[warnings.md](https://github.com/mssola/conventions/blob/master/files/warnings.md)
+file.
 - An `uncrustify` config file is on the works.
 
