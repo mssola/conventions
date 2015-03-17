@@ -186,8 +186,8 @@ your compiler requirements. Usually compiler developers provide a site in
 which you can check what's the status of the implementation of multiple
 versions of ISO standards:
 
-    - **Clang**: [C++11, C++14, C++1z](http://clang.llvm.org/cxx_status.html)
-    - **GCC**: [C++14](https://gcc.gnu.org/projects/cxx1y.html)
+- **Clang**: [C++11, C++14, C++1z](http://clang.llvm.org/cxx_status.html)
+- **GCC**: [C++14](https://gcc.gnu.org/projects/cxx1y.html)
 
 You should also check which compiler versions are available on the Operating
 Systems that you're planning to support. All in all: yes, it's a pain in the
