@@ -1,10 +1,11 @@
 
 ## General
 
-**-Werror**: a bit hardcore, but warnings are usually a bad thing. Sometimes it
-happens that some components are auto-generated (e.g. through `bison`) and they
-bring warnings. We can solve this by explicitly disabling some warnings for a
-specific set of files. For example, in CMake we can do something like:
+**-Werror**: a bit hardcore, but warnings are usually a bad thing. It may
+happen that some components of our codebase has been auto-generated (e.g.
+through `bison`) and they produce some warnings. We can solve this by
+explicitly disabling some warnings for a specific set of files. For
+example, in CMake we can do something like:
 
 ```cmake
 set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/parser.cpp
@@ -15,11 +16,11 @@ set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/parser.cpp
 **-Wall**, **-Wextra**: use it always since it includes the vast majority of
 warnings, and all of them are useful.
 
-**-Wpedantic**: issue all warnings demanded by strict ISO C and ISO C++. It also
-disables some GNU extensions. This is ok, because even if clang implemented
-most of the GNU extensions, we really should try to comply with the ISO as much
-as possible. A pretty simple (and stupid) example of code rejected by this
-warning is:
+**-Wpedantic**: issue all the warnings demanded by strict ISO C and ISO C++.
+It also disables some GNU extensions. This is ok, because even if clang
+implemented most of the GNU extensions, we really should try to comply with
+the ISO as much as possible. A pretty simple (and stupid) example of code
+rejected by this warning is:
 
 ```cpp
 int a;; // <- double ';'
@@ -28,8 +29,9 @@ int a;; // <- double ';'
 **-Wmissing-declarations**: it shows a warning for globally defined functions
 that have not been declared before (e.g. in a header file). It should not
 affect us, because global variables are prohibited in my code style. It can
-happen if we have let's say a `main.cpp` file and we have some helper
-functions there. This can be solved with a simple anonymous namespace.
+happen that we have a `main.cpp` file and we have some helper functions
+there, and they will raise this warning. This can be solved with a simple
+anonymous namespace.
 
 **-Wshadow**: it can be useful but it has some caveats. A common problem for
 me was:
@@ -61,14 +63,14 @@ Thing::Thing(std::string n) : name(n)
 ```
 
 With this we no longer have a warning. Since `n` is assigned to `name`, it's
-clear that `n` is the name without looking at the .h file.
+clear that `n` is the name without looking at the `.h` file.
 
 **-Wswitch-default**: this is probably not the most important one, but it forces
 us to handle default cases. That is, even if we think that we have handled every
 single case in a switch, there will always be *that* case that we didn't think
 was possible or that we just forgot.
 
-**-Wundef**: don't evaluate undefined stuff in #if directives. This is weird,
+**-Wundef**: don't evaluate undefined stuff in `#if` directives. This is weird,
 and I think I never encountered this, but it's better to be safe than sorry.
 
 **-Winit-self**: this is pretty stupid, but ironically enough, I've encountered
@@ -76,7 +78,7 @@ this in some code bases. This warning tells when a variable is being
 initialized by itself. Example:
 
 ```cpp
-int i = i;
+int i = i; // believe me, I've seen similar stuff...
 ```
 
 **-Wmissing-include-dirs**: dear user, give me valid include directories.
@@ -127,8 +129,8 @@ class Thing {
 ```
 
 **-Wnon-virtual-dtor**: raise a warning when a class does not define a virtual
-destructor and it should (e.g. it has other virtual methods). This way we
-prevent some unsafe de-allocations.
+destructor and it should (e.g. it has other virtual methods). This way we can
+prevent unsafe de-allocations.
 
 **-Woverloaded-virtual**: warn us when a function declaration hides virtual
 functions from a base class. Example:
@@ -143,10 +145,10 @@ struct Class : public Base {
 };
 ```
 
-## Castings & conversions
+## Castings & signedness
 
 The following warnings can be summed up as: "Compiler, be as rigid as possible
-here, and don't allow fuck-ups with castings and signedness".
+and don't allow fuck-ups with castings and signedness".
 
 **-Wcast-align**: this warning is important because it prevents fuck-ups when it
 comes to dangerous castings that can change alignments (e.g. casting similar
@@ -183,8 +185,8 @@ over-complicate things that can be simple.
 
 **-std**: try to use the most recent version of ISO C and ISO C++ depending on
 your compiler requirements. Usually compiler developers provide a site in
-which you can check what's the status of the implementation of multiple
-versions of ISO standards:
+which you can check what's the status of the implementation of the different
+ISO standard versions:
 
 - **Clang**: [C++11, C++14, C++1z](http://clang.llvm.org/cxx_status.html).
 - **GCC**: [C++11](https://gcc.gnu.org/projects/cxx0x.html),
@@ -192,7 +194,7 @@ versions of ISO standards:
 
 You should also check which compiler versions are available on the Operating
 Systems that you're planning to support. All in all: yes, it's a pain in the
-ass to check all this.
+ass to check all this, but it's worth it.
 
 **-fno-exceptions**: according to my style guide, exceptions are forbidden, so tell
 the compiler that we don't need them.
