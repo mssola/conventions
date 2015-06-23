@@ -13,3 +13,12 @@ only have one objection: Perl-style global variables are accepted. I like Perl,
 and even though I agree that Perl-style global variables are not very
 descriptive, I'm too used to them.
 
+## rubocop
+
+In order to enforce these style guide in our code, you can use
+[rubocop](https://github.com/bbatsov/rubocop). The default behavior of
+`rubocop` follows the community-driven guide as close as possible. Moreover,
+I've also added a
+[rubocop.yml]((https://github.com/mssola/conventions/blob/master/files/rubocop.yml)
+file that fixes some of the defaults.
+

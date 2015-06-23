@@ -1,0 +1,27 @@
+
+##
+# Style
+
+# Not worth it, since numbers like ports are too weird in this format.
+Style/NumericLiterals:
+  Enabled: false
+
+## Metrics
+
+# This metric is *really* small by default. This value makes more sense.
+Metrics/AbcSize:
+  Max: 30
+
+##
+# Comment out the following if this project is a Ruby on Rails application.
+
+#AllCops:
+# RunRailsCops: true
+# Exclude:
+#  # Files that are out of our control and that are not excluded in the
+#  # default config of rubocop.
+#  - db/schema.rb
+#  - db/migrate/*
+#  - bin/*
+#  - vendor/**/*
+
