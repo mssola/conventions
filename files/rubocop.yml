@@ -6,7 +6,8 @@
 Style/NumericLiterals:
   Enabled: false
 
-## Metrics
+##
+# Metrics
 
 # This metric is *really* small by default. This value makes more sense.
 Metrics/AbcSize:
